@@ -12,10 +12,16 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func main() {
 	for _, url := range os.Args[1:] {
+		httpLink := "http://"
+		if !strings.HasPrefix(url, httpLink) {
+			url = httpLink + url
+		}
+
 		resp, err := http.Get(url)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
