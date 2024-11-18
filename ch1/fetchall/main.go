@@ -10,9 +10,9 @@ package main
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -30,13 +30,25 @@ func main() {
 
 func fetch(url string, ch chan<- string) {
 	start := time.Now()
+
 	resp, err := http.Get(url)
 	if err != nil {
 		ch <- fmt.Sprint(err) // send to channel ch
 		return
 	}
 
-	nbytes, err := io.Copy(ioutil.Discard, resp.Body)
+	filename := url
+
+	filename = strings.TrimPrefix(filename, "https://")
+	filename = strings.TrimPrefix(filename, "http://")
+
+	output, err := os.Create(filename + "-dump.html")
+	if err != nil {
+		ch <- fmt.Sprintf("while create output file: %v", err)
+		return
+	}
+
+	nbytes, err := io.Copy(output, resp.Body)
 	resp.Body.Close() // don't leak resources
 	if err != nil {
 		ch <- fmt.Sprintf("while reading %s: %v", url, err)
