@@ -1,0 +1,34 @@
+Command:
+./main https://goland.org https://gopl.io https://godoc.org https://Google.com https://YouTube.com https://baidu.com https://bilibili.com https://Facebook.com https://qq.com https://Twitter.com
+ https://zhihu.com https://wikipedia.org https://Amazon.com https://instagram.com https://linkedin.com https://ReddIt.com https://WhatsApp.com https://OpenAi.com https://Yahoo.com https://Bing.com https://taobao.com https://163.com https://yandex.ru https://xvideos.com https://Live.com https://PornHub.com https://MicroSoft.com https://vk.com
+
+Result:
+Get "https://yandex.ru": dial tcp 37.57.111.6:443: connect: connection refused
+Get "https://vk.com": dial tcp 37.57.111.6:443: connect: connection refused
+0.06s      101  https://WhatsApp.com
+0.18s     7944  https://OpenAi.com
+0.28s    66788  https://Facebook.com
+0.35s   338444  https://instagram.com
+0.36s   532530  https://YouTube.com
+0.40s    55861  https://Bing.com
+0.44s    32284  https://godoc.org
+0.44s    99998  https://wikipedia.org
+0.49s     2610  https://Twitter.com
+0.58s   174309  https://xvideos.com
+0.60s     4154  https://gopl.io
+0.61s   851574  https://PornHub.com
+0.69s     6591  https://Amazon.com
+0.89s   639861  https://ReddIt.com
+0.95s    79185  https://taobao.com
+0.97s    21071  https://Google.com
+1.09s  1703687  https://Yahoo.com
+1.11s   136501  https://linkedin.com
+1.35s      311  https://163.com
+1.35s       92  https://zhihu.com
+1.50s     2381  https://baidu.com
+1.59s      326  https://qq.com
+2.25s     1334  https://bilibili.com
+3.46s    51379  https://goland.org
+114.19s      148  https://MicroSoft.com
+114.19s      148  https://Live.com
+114.19s elapsed
