@@ -1,0 +1,10 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+
+.idea
+.vscode
+.DS_Store
+
+# binaries
+main
